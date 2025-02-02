@@ -4,46 +4,67 @@ Speaker - Dr Andy Sode Anker
 
 Context - Machine Learning/AI analysis methods for scattering/spectroscopy data for battery materials
 
-**Harnessing AI and Machine Learning for Battery Research: Insights from the Faraday Masterclass 2024**
+**Harnessing AI and Machine Learning to Revolutionize Materials Science: Insights from Dr. Andy Sotoranka**  
 
-The Faraday Masterclass 2024 series is providing cutting-edge insights into how advanced computational tools can revolutionize battery research. One of the most anticipated sessions featured Dr. Andy Sotoranka, a distinguished researcher in energy materials, who explored the role of Artificial Intelligence (AI) and Machine Learning (ML) in analyzing scattering and spectroscopy data from large-scale research facilities.
+In a recent webinar, Dr. Andy Sotoranka, Novo Nordisk Foundation Postdoctoral Fellow at DTU and Forbes 30 Under 30 honoree, shared groundbreaking advancements in applying artificial intelligence (AI) and machine learning (ML) to analyze scattering and spectroscopy data. His work bridges the gap between experimental data and structural insights, offering transformative tools for materials scientists. Here’s a breakdown of his key insights.  
 
-Dr. Sotoranka, a Novo Nordic Foundation Postdoctoral Fellow at DTU and a Junior Research Fellow at Somerville College, Oxford, has been recognized in Forbes' 30 under 30 for his pioneering contributions to the field. His current research focuses on developing self-driving laboratories for controlled synthesis of inorganic materials, a concept that aligns closely with the integration of AI-driven techniques in materials science.
+---
 
-### **The Role of Experimental Data in Materials Science**
+### **The Challenge: Analyzing Mountains of Experimental Data**  
 
-In his presentation, Dr. Sotoranka emphasized that experimental data is the backbone of materials science research. Whether working in a laboratory or validating computational simulations, accurate data analysis is crucial. The primary types of experimental data used in this field include scattering data, spectroscopy, and imaging. The challenge, however, lies in the efficient and accurate interpretation of vast amounts of data generated in large-scale experiments.
+Modern facilities like synchrotrons and neutron sources generate vast amounts of data—often *tens of thousands of datasets* in a single experiment. Traditional analysis methods, such as structure refinement (e.g., Rietveld refinement), rely on expert intuition and time-consuming trial-and-error to match data to structural models. As Dr. Sotoranka noted:  
 
-At facilities such as synchrotrons and neutron sources, data acquisition happens at high resolutions, often generating thousands of datasets within a short timeframe. Manually analyzing such extensive datasets is impractical, making AI-powered solutions a game-changer.
+> *"In my PhD, I spent months refining structural models. Machine learning can now do this in seconds."*  
 
-### **AI and Machine Learning for Scattering and Spectroscopy Data**
+---
 
-Dr. Sotoranka delved into the power of machine learning in analyzing Pair Distribution Function (PDF) data, a method used to understand atomic arrangements in materials. He explained how AI models can automate the traditionally labor-intensive process of structure refinement, which often requires extensive expert knowledge and weeks—or even months—of manual effort.
+### **From Fingerprints to Structures: The Power of Supervised ML**  
 
-Traditionally, researchers rely on Rietveld refinement methods to determine atomic structures from scattering data. This process requires a structural model, which is then refined against experimental data. The problem arises when an unknown structure does not match any existing databases, requiring manual hypothesis generation. AI models can now overcome this limitation by identifying structural patterns automatically.
+Dr. Sotoranka likened scattering data to **forensic fingerprints**. Just as detectives compare fingerprints to databases, supervised ML algorithms can screen simulated structural databases to identify matches for experimental data. Key tools developed include:  
 
-### **Machine Learning Models for Structure Identification**
+- **MetalFinder**: Identifies metals from PDF (Pair Distribution Function) data.  
+- **CIF-Finder**: Matches PDFs to metal oxide structures for Rietveld refinement.  
+- **POMfinder**: Tailored for polyoxometalates.  
 
-One of the key innovations presented was the use of supervised machine learning for structure classification. By training AI models on known structures, researchers can quickly classify new experimental datasets, significantly reducing analysis time. However, a major challenge with supervised learning is the need for labeled training data, which may not always be available for novel materials.
+These tools classify data with ~96% accuracy in top-three guesses, slashing analysis time from hours to seconds. However, Dr. Sotoranka emphasized the need for validation:  
 
-To address this, Dr. Sotoranka introduced the concept of unsupervised learning, where AI models identify hidden patterns in data without predefined labels. This approach enables clustering and dimensionality reduction techniques to reveal structural relationships that may not be immediately apparent through traditional methods.
+> *"ML accelerates discovery, but conventional refinement remains critical for verifying results."*  
 
-### **AI-Powered Structure Prediction Tools**
+---
 
-Several AI-driven tools were introduced in the talk, including:
+### **Beyond Databases: Unsupervised Learning and Latent Space**  
 
-- **MetalFinder** – An AI model designed to identify metal structures from PDF data.
-- **CIF-Finder** – A tool for matching experimental data to known structural models in databases.
-- **DeepStruct** – A deep learning-based platform that can predict unknown structures directly from scattering data.
+What if a structure *isn’t* in the database? Enter **unsupervised learning**. Using autoencoders—neural networks that compress data into a simplified "latent space"—Dr. Sotoranka’s team interpolates between known structures to predict unknown ones. For example:  
 
-These tools provide researchers with rapid insights, allowing them to test hypotheses in real time and streamline the materials discovery process.
+- A **probabilistic autoencoder** trained on simulated nanoparticle PDFs learned to map experimental data to atomic coordinates with sub-angstrom accuracy.  
+- The tool **Deepstruct** visualizes structures in 2D latent space, allowing users to explore chemical trends and generate plausible models in seconds.  
 
-### **Bridging the Gap Between Simulated and Experimental Data**
+This approach, dubbed *"AlphaFold for scattering data,"* democratizes structural analysis, enabling non-experts to propose models for validation.  
 
-Despite the progress in AI-driven analysis, Dr. Sotoranka highlighted a fundamental challenge: AI models are often trained on simulated data, whereas experimental data includes noise and artifacts that do not always align perfectly with theoretical predictions. Efforts are ongoing to refine these models so they can adapt to real-world experimental variations.
+---
 
-### **The Future of AI in Battery Research**
+### **Real-World Impact and Future Directions**  
 
-As AI and ML continue to evolve, their applications in battery research will expand beyond data analysis. Future developments include self-driving laboratories that autonomously synthesize and test new materials, accelerating innovation in energy storage technologies. With AI's ability to process vast datasets, optimize material compositions, and predict structural properties, we are on the brink of a new era in battery science.
+Dr. Sotoranka’s tools are already empowering researchers:  
 
-The Faraday Masterclass 2024 series is shedding light on these transformative developments, empowering researchers to harness AI for more efficient and accurate materials research. Dr. Sotoranka’s insights have provided a glimpse into a future where AI-driven discoveries lead to groundbreaking advancements in battery technology, ultimately paving the way for more sustainable energy solutions.
+- **Deepstruct’s public platform** lets users upload PDFs and generate structural hypotheses instantly.  
+- **Self-driving laboratories** integrate these models to automate material synthesis and characterization.  
+
+Looking ahead, he envisions **foundation models** (akin to ChatGPT) that unify ML across materials science domains, from spectroscopy to imaging.  
+
+---
+
+### **Try It Yourself!**  
+
+Explore Dr. Sotoranka’s tools:  
+
+- **Deepstruct**: [DeepStruc](https://github.com/EmilSkaaning/DeepStruc) (Upload PDFs to predict structures).  
+- **MetalFinder/CIF-Finder**: Available for specialized material screening.  
+
+---
+
+### **Conclusion**  
+
+Dr. Sotoranka’s work exemplifies how AI/ML is reshaping materials science—turning months of labor into minutes of computation. While challenges like experimental-to-simulated data gaps persist, these tools offer a glimpse into a future where *every lab* leverages AI to accelerate discovery.  
+
+*Acknowledgments*: Dr. Sotoranka thanked collaborators at KU, ISIS Neutron Source, and the Scientific Machine Learning Group. 
